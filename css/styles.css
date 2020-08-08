@@ -397,7 +397,7 @@ header {
     color: var(--desc-color);
 }
 
-.contact-form-option-label a {
+.contact-form-option-label-span a {
     color: var(--accent-color);
 }
 
