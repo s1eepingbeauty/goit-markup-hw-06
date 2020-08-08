@@ -412,7 +412,7 @@ header {
     color: var(--accent-color);
 }
 
-.contact-form-checkbox {
+/*.contact-form-checkbox {*/
     /*прячем стандартный чекбокс*/
 
     /*position: absolute;
