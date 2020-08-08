@@ -420,6 +420,7 @@ header {
     box-shadow: 0 0 0 0.1em #212121;
     border-radius: 0.05em;
     background-color: #ffffff;
+    flex-shrink: 0;
 }
 
 .contact-form-checkbox:checked + .contact-form-custom-checkbox {
