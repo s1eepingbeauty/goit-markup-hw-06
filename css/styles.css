@@ -401,7 +401,7 @@ header {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    padding-left: 1.2em;
+    /*padding-left: 1.2em;*/
 }
 
 .contact-form-option-label-span {
@@ -412,10 +412,10 @@ header {
     color: var(--accent-color);
 }
 
-.contact-form-checkbox2 {
+.contact-form-checkbox {
     /*прячем стандартный чекбокс*/
 
-    position: absolute;
+    /*position: absolute;
     width: 1px;
     height: 1px;
     margin: -1px;
@@ -427,6 +427,8 @@ header {
 
 .contact-form-custom-checkbox {
     position: absolute;
+    left: 10px;
+    bottom: 10px;
     width: 16px;
     height: 15px;
     margin-left: -1.2em;
@@ -437,7 +439,7 @@ header {
 
 .contact-form-checkbox:checked + .contact-form-custom-checkbox {
     background-image: url(../images/check.svg);
-    background-color: var(--accent-color);
+    background-color: var(--accent-color);*/
 }
 
 .contact-form-btn {
