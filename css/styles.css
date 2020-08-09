@@ -270,20 +270,14 @@ header {
     pointer-events: none;
 }
 
-.contact-form {
+.contact-form-container {
     position: relative;
-    max-width: 528px;
-    background-color: var(--title-dark-theme-color);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-        0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    padding: 40px;
 }
 
 .contact-form-btn-close {
     position: absolute;
-    right: 8px;
     top: 8px;
+    right: 8px;
     width: 30px;
     height: 30px;
     background-color: transparent;
@@ -307,21 +301,13 @@ header {
     fill: #ffffff;
 }
 
-.contact-form-item {
-    position: relative;
-    margin-bottom: 30px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contact-form-input-svg {
-    margin-right: 8px;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contact-form-input-label {
-    position: absolute;
-    left: 16px;
-    top: 11px;
+.contact-form {
+    max-width: 528px;
+    background-color: var(--title-dark-theme-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 40px;
 }
 
 .contact-form-title {
@@ -334,24 +320,35 @@ header {
     margin-bottom: 30px;
 }
 
-.contact-form-input-label span {
+.contact-form-item {
+    position: relative;
+    margin-bottom: 30px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-input-svg {
     position: absolute;
-    opacity: 0;
-    visibility: hidden;
+    left: 15px;
+    top: 11px;
+    margin-right: 8px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-input-label {
+    position: absolute;
+    top: 12px;
+    left: 42px;
     color: var(--desc-color);
 }
 
-.contact-form-item
-    input:not(:placeholder-shown)
-    ~ .contact-form-input-label
-    span {
-    opacity: 1;
-    left: 0px;
-    bottom: 32px;
+.contact-form-item input:not(:placeholder-shown) ~ .contact-form-input-label {
+    top: 0;
+    left: 15px;
     font-size: 12px;
     visibility: visible;
-    transition: 0.3s;
     color: var(--accent-color);
+    transform: translateY(-16px);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-form-input,
@@ -368,12 +365,21 @@ header {
     height: 40px;
 }
 
+.contact-form-input:not(:placeholder-shown):valid {
+    border-color: lawngreen;
+}
+
+.contact-form-input:not(:placeholder-shown):invalid {
+    border-color: red;
+}
+
 .contact-form-comment {
     height: 120px;
     margin-bottom: 20px;
     resize: none;
     padding: 12px 16px;
 }
+
 .contact-form-item:hover .contact-form-input-svg,
 .contact-form-item:focus .contact-form-input-svg {
     fill: var(--accent-color);
@@ -383,8 +389,7 @@ header {
 .contact-form-item:focus .contact-form-input,
 .contact-form-comment:hover,
 .contact-form-comment:focus {
-    border: 1px solid var(--accent-color);
-    border-radius: 4px;
+    border-color: var(--accent-color);
 }
 
 .contact-form-option-label {
@@ -417,8 +422,8 @@ header {
     width: 16px;
     height: 15px;
     margin-left: -1.2em;
-    box-shadow: 0 0 0 0.1em #212121;
-    border-radius: 0.05em;
+    border: 1px solid #212121;
+    border-radius: 2px;
     background-color: #ffffff;
     flex-shrink: 0;
 }
@@ -426,21 +431,26 @@ header {
 .contact-form-checkbox:checked + .contact-form-custom-checkbox {
     background-image: url(../images/check.svg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: right;
     background-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .contact-form-btn {
-    background-color: var(--accent-color);
-    color: var(--text-light-theme-color);
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
     font-weight: 700;
     font-size: 16px;
     line-height: 1.9em;
     letter-spacing: 0.06em;
+    width: 200px;
+    background-color: var(--accent-color);
+    color: var(--text-light-theme-color);
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 30px;
-    width: 200px;
     border: 0;
     border-radius: 4px;
     cursor: pointer;
